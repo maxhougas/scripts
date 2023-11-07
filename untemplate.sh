@@ -7,7 +7,7 @@ then
 fi
 if [ -z $(echo "$1" | grep -o "TEMPLATE") ];
 then
- echo "file appears to not be a template"
+ echo "file appears not to be a template"
  exit 2
 fi
 if [ -f ut.out ];
