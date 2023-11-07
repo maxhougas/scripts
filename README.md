@@ -36,7 +36,7 @@ Lunix shell scripts--mostly Bash
 - ./rmi.sh.TEMPLATE.sh
 - Removes docker image TEMPLATE , does not force i.e. Containers running image TEMPLATE must be removed first.
 
-## run.TEMPLATE.sh
+## run.CONTAINER.sh
 - Do not use untemplate.sh--edit manually.
 - Runs a docker container CONTAINER using IMAGE
 
