@@ -21,6 +21,23 @@ Lunix shell scripts--mostly Bash
 - Final line is altered to be ' echo "LINE" >> PSEUDOOUT'
 - Dumps to stdout; will not clobber files.
 
+## jsonarrayize.sh
+- ./jsonarrayize.sh FILE
+- Escapes double quotes
+- Wraps each line in ' "LINE",'
+- Adds '[\n' at the beginning of file
+- Removes ',' from last line and adds '\n]'
+- Result should be a valid JSON array
+
+## jsonobjectize.sh
+- ./jsonobjectize FILE DELIMITER
+- Use on files of format KEYDELIMITERVALUE
+- Escapes double quotes--files with double quotes in keys will fail
+- Wraps valuess in '"VALUE",'
+- Replaces DELIMITER with ': '
+- Adds '{\n' to first line
+- Replaces final ',' with '\n}'
+
 ## kill.TEMPLATE.sh
 - Use untemplate.sh
 - ./kill.TEMPLATE.sh
