@@ -21,6 +21,20 @@ Lunix shell scripts--mostly Bash
 - Final line is altered to be ' echo "LINE" >> PSEUDOOUT'
 - Dumps to stdout; will not clobber files.
 
+## jsonaoo.sh
+- ./jsonaoo FILE SMALLDELIM LARGEDELIM
+- FILE should be of format KEYSMALLDELIMVALUE\nLARGEDELIM\nKEYSMALLDELIMVALUE
+- Use single characters for your delimiters--you will have a bad time
+- Some characters are easier than others. Asterisk seems to work.
+- Escapes double quotes
+- Ends each line with '",'
+- Replaces SMALLDELIM with ': "'
+- Indents all lines with two spaces
+- Replaces ',\n  LARGEDELIM",' with ' },\n'
+- Replaces final ',' with '\n }\n]'
+- Inserts '[\n {\n' into first line
+- Dumps to stdout
+
 ## jsonarrayize.sh
 - ./jsonarrayize.sh FILE
 - Escapes double quotes
@@ -28,6 +42,7 @@ Lunix shell scripts--mostly Bash
 - Adds '[\n' at the beginning of file
 - Removes ',' from last line and adds '\n]'
 - Result should be a valid JSON array
+- Dumps to stdout
 
 ## jsonobjectize.sh
 - ./jsonobjectize FILE DELIMITER
@@ -37,6 +52,7 @@ Lunix shell scripts--mostly Bash
 - Replaces DELIMITER with ': '
 - Adds '{\n' to first line
 - Replaces final ',' with '\n}'
+- Dumps to stdout
 
 ## kill.TEMPLATE.sh
 - Use untemplate.sh
@@ -56,6 +72,27 @@ Lunix shell scripts--mostly Bash
 ## run.CONTAINER.sh
 - Do not use untemplate.sh--edit manually.
 - Runs a docker container CONTAINER using IMAGE
+
+## scrapelist.sh
+- ./scrapelist.sh
+- Pulls HTML from URLs in scrapeurls
+- Regex matches for the first line in scrapepattern via grep -o
+- Dumps to stdout
+
+## scrapepattern
+- First line will be used as the regex pattern for scrapelist.sh and scrapeurl.sh
+
+## scrapeurls
+- List of URLs for scrapelist.sh
+
+## scrapeurl.sh
+- ./scrapeurl.sh URL
+- Pulls HTML via curl
+- Regex matches for the first line in scrapepattern via grep -o
+- Dumps to stdout
+
+## sedtest
+- Test input for sed lines
 
 ## untemplate.sh
 - ./untemplate.sh FILE UNTEMPLATE
