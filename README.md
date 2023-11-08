@@ -1,5 +1,5 @@
 # scripts
-Lunix shell scripts--mostly Bash
+Lunix shell scripts--mostly for Docker
 
 ## changeshell.sh
 - ./changeshell.sh FILE SHELL

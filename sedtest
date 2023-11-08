@@ -1,5 +1,5 @@
-A$'file'
-multiple$"lines"
-*
-more$lines
-found$here
+A:'file'
+multiple:"lines"
+#
+more:lines
+found:here
