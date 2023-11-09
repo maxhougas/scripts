@@ -15,6 +15,7 @@ Lunix shell scripts--mostly for Docker
 
 ## echoize.sh
 - ./echoize.sh FILE PSUEDOOUT
+- Escapes backslashes
 - Escapes double quotes before other operations i.e. 'Foo"bar' becomes 'Foo\"bar'
 - Wraps each line of a file in ' echo "LINE" >> PSEUDOOUT &&\'
 - First line is altered to 'echo "LINE" > PSEUDOOUT &&\'
@@ -26,6 +27,7 @@ Lunix shell scripts--mostly for Docker
 - FILE should be of format KEYSMALLDELIMVALUE\nLARGEDELIM\nKEYSMALLDELIMVALUE
 - Use single characters for your delimiters--you will have a bad time
 - Some characters are easier than others. Asterisk seems to work.
+- Escapes backslashes
 - Escapes double quotes
 - Ends each line with '",'
 - Starts each line with '  "'
@@ -37,6 +39,7 @@ Lunix shell scripts--mostly for Docker
 
 ## jsonarrayize.sh
 - ./jsonarrayize.sh FILE
+- Escapes backslashes
 - Escapes double quotes
 - Wraps each line in ' "LINE",'
 - Adds '[\n' at the beginning of file
@@ -47,7 +50,8 @@ Lunix shell scripts--mostly for Docker
 ## jsonobjectize.sh
 - ./jsonobjectize FILE DELIMITER
 - Use on files of format KEYDELIMITERVALUE
-- Escapes double quotes--files with double quotes in keys will fail
+- Escapes backslashes
+- Escapes double quotes--files with double quotes in keys should be fine now
 - Ends each line with '",'
 - Starts each line with ' "'
 - Replaces DELIMITER with '":"'
