@@ -28,9 +28,9 @@ Lunix shell scripts--mostly for Docker
 - Some characters are easier than others. Asterisk seems to work.
 - Escapes double quotes
 - Ends each line with '",'
-- Replaces SMALLDELIM with ': "'
-- Indents all lines with two spaces
-- Replaces ',\n  LARGEDELIM",' with ' },\n'
+- Starts each line with '  "'
+- Replaces SMALLDELIM with '":"'
+- Replaces ',\n  "LARGEDELIM",' with ' },\n'
 - Replaces final ',' with '\n }\n]'
 - Inserts '[\n {\n' into first line
 - Dumps to stdout
@@ -48,8 +48,9 @@ Lunix shell scripts--mostly for Docker
 - ./jsonobjectize FILE DELIMITER
 - Use on files of format KEYDELIMITERVALUE
 - Escapes double quotes--files with double quotes in keys will fail
-- Wraps valuess in '"VALUE",'
-- Replaces DELIMITER with ': '
+- Ends each line with '",'
+- Starts each line with ' "'
+- Replaces DELIMITER with '":"'
 - Adds '{\n' to first line
 - Replaces final ',' with '\n}'
 - Dumps to stdout
